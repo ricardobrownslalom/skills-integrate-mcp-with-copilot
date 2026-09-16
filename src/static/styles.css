@@ -16,12 +16,54 @@ body {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+#auth-controls,
+#teacher-session,
+.dialog-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#auth-controls {
+  flex-shrink: 0;
+}
+
+#teacher-name {
+  font-size: 14px;
+}
+
+dialog {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  margin: auto;
+  padding: 25px;
+  width: min(90%, 400px);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+dialog h3 {
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+.dialog-actions {
+  justify-content: flex-end;
 }
 
 header h1 {
@@ -111,18 +153,10 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
-  color: #c62828;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
-  border-radius: 3px;
-}
-
-.delete-btn:hover {
-  background-color: #ffebee;
+  background: #c62828;
+  color: white;
+  font-size: 13px;
+  padding: 5px 8px;
 }
 
 .participants-section p {
@@ -190,6 +224,18 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 600px) {
+  header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #auth-controls,
+  #teacher-session {
+    justify-content: center;
+  }
 }
 
 footer {
